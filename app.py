@@ -13,7 +13,7 @@ import os
 
 
 app = Flask(__name__)
-CORS(app  , supports_credentials=True)
+CORS(app  , resources={r"/*": {"origins": "https://acm-admin-frontend.vercel.app"}} , supports_credentials=True)
 
 load_dotenv()
 
