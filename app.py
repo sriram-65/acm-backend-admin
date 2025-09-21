@@ -14,6 +14,10 @@ import os
 
 app = Flask(__name__)
 CORS(app  , resources={r"/*": {"origins": "https://acm-admin-frontend.vercel.app"}} , supports_credentials=True)
+app.config.update(
+    SESSION_COOKIE_SAMESITE="None", 
+    SESSION_COOKIE_SECURE=True      
+)
 
 load_dotenv()
 
