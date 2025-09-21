@@ -20,6 +20,14 @@ def Authenticate():
     session['isauth'] = 'AUTHENTICATED'
     
     return jsonify({"Success":True , 'msg':"Authenticated Sucessfully ✅"})
+
+
+
+@AuthRoutes.route('/me', methods=['GET'])
+def Me():
+    if session.get('isauth') == 'AUTHENTICATED':
+        return jsonify({"Success": True, "msg": "Logged in"})
+    return jsonify({"Success": False, "msg": "Not logged in"})
     
   
     
