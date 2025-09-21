@@ -15,9 +15,10 @@ def Authenticate():
     
     if response != True:
         return jsonify({"Success":False,"Error":response})
-        
-    session['isauth'] = 'AUTHENTICATED'
+
     session.permanent = True
+    session['isauth'] = 'AUTHENTICATED'
+    
     return jsonify({"Success":True , 'msg':"Authenticated Sucessfully ✅"})
     
   
