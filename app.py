@@ -15,9 +15,13 @@ import os
 app = Flask(__name__)
 
 app.config.update(
-    SESSION_COOKIE_SAMESITE="None", 
-    SESSION_COOKIE_SECURE=True      
+    SESSION_TYPE="filesystem",       # Stores sessions on server (works on Vercel)
+    SESSION_COOKIE_SAMESITE="None", # Needed for cross-origin
+    SESSION_COOKIE_SECURE=True,     # HTTPS required
+    SESSION_PERMANENT=True
 )
+
+Session(app) 
 
 CORS(app  , resources={r"/*": {"origins": "https://acm-admin-frontend.vercel.app"}} , supports_credentials=True)
 
