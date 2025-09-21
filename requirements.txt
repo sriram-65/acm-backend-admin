@@ -3,3 +3,4 @@ pymongo
 cloudinary
 gunicorn
 python-dotenv
+flask-cors
