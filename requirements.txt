@@ -4,4 +4,4 @@ cloudinary
 gunicorn
 python-dotenv
 flask-cors
-flask_session
+Flask-Session
