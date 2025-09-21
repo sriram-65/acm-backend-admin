@@ -10,7 +10,7 @@ from flask_cors import CORS
 from dotenv import load_dotenv
 from datetime import timedelta
 import os
-
+from flask_session import Session
 
 app = Flask(__name__)
 
