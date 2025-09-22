@@ -30,4 +30,13 @@ def Me():
     return jsonify({"Success": False, "msg": "Not logged in"})
     
   
-    
+@AuthRoutes.route('/clear')
+def clear():
+    try:
+        if session.get("isauth"):
+            session.clear()
+            return jsonify({"Success": True, "msg": "Cleared"})
+        else:
+            return jsonify({"Sucess":False , "Error":"Not Found"})
+    except:
+        return jsonify({"Success":False , 'Error':"Internal Server Error"})
