@@ -1,4 +1,4 @@
-# #NPRCET@ACM
+#NPRCET@ACM
 
 from flask import Flask
 from routes.Eroutes import ERoutes
